@@ -1,0 +1,6 @@
+venv
+.env
+.env.example
+.pytest_cache
+*.pyc
+.ipynb_checkpoints/

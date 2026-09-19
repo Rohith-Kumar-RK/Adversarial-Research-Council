@@ -59,7 +59,7 @@ linear chain — this is the actual reason to reach for LangGraph over CrewAI he
 ## Stack
 
 - Orchestration: LangGraph
-- LLM: Anthropic API (Claude)
+- LLM: Google AI Studio API (Gemini)
 - Search: Tavily API
 - Vector memory: Qdrant (local/embedded mode by default, no server needed to try it)
 - Graph memory: Neo4j (needs a running instance — see docker-compose.yml)
@@ -69,7 +69,7 @@ linear chain — this is the actual reason to reach for LangGraph over CrewAI he
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # fill in ANTHROPIC_API_KEY and TAVILY_API_KEY
+cp .env.example .env   # fill in GEMINI_API_KEY and TAVILY_API_KEY
 docker compose up -d   # starts Neo4j (Qdrant runs embedded, no container needed)
 python src/main.py "Is Nvidia's data center margin expansion sustainable?"
 # or, for the live dashboard:
@@ -91,4 +91,4 @@ streamlit run app.py
 - Swap Tavily for SerpAPI/Playwright scraping in `tools/search_tool.py` — nothing else changes.
 - Add a "Devil's Advocate" second Skeptic with a different persona/temperature for more diverse
   challenges — just add another conditional node in `graph.py`.
-- Swap Claude for a local model (Ollama) by changing `src/config.py` `LLM_CALL` function only.
+- Swap any LLM for a local model (Ollama) by changing `src/config.py` `LLM_CALL` function only.

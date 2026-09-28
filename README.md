@@ -65,7 +65,7 @@ linear chain — this is the actual reason to reach for LangGraph over CrewAI he
 - Graph memory: Neo4j (needs a running instance — see docker-compose.yml)
 - UI: Streamlit (shows the debate trace live, not just the final answer)
 
-## Setup
+<!-- ## Setup
 
 ```bash
 pip install -r requirements.txt
@@ -74,9 +74,9 @@ docker compose up -d   # starts Neo4j (Qdrant runs embedded, no container needed
 python src/main.py "Is Nvidia's data center margin expansion sustainable?"
 # or, for the live dashboard:
 streamlit run app.py
-```
+``` -->
 
-## Files
+<!-- ## Files
 
 - `src/agents/` — one file per role, each a plain function `(state) -> state`
 - `src/graph.py` — LangGraph wiring, the debate loop, routing logic
@@ -84,11 +84,11 @@ streamlit run app.py
 - `src/memory/graph_store.py` — Neo4j wrapper + contradiction query
 - `src/tools/search_tool.py` — Tavily wrapper
 - `src/main.py` — CLI entry point
-- `app.py` — Streamlit dashboard, streams each agent's turn as it happens
+- `app.py` — Streamlit dashboard, streams each agent's turn as it happens -->
 
-## Extending
+<!-- ## Extending
 
 - Swap Tavily for SerpAPI/Playwright scraping in `tools/search_tool.py` — nothing else changes.
 - Add a "Devil's Advocate" second Skeptic with a different persona/temperature for more diverse
   challenges — just add another conditional node in `graph.py`.
-- Swap any LLM for a local model (Ollama) by changing `src/config.py` `LLM_CALL` function only.
+- Swap any LLM for a local model (Ollama) by changing `src/config.py` `LLM_CALL` function only. -->
